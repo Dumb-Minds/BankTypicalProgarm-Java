@@ -1,3 +1,4 @@
+//class for managing all bank operations
 import java.util.Random;
 import java.io.*;
 import java.util.*;
@@ -30,10 +31,12 @@ public class Bank{
 		this.email = email;
 		this.managerName = manager;
 	}
+	//generate random number in a range
 	private static int getRandomNumberInRange(int min, int max){
 		Random r = new Random();
 		return r.nextInt((max - min) + 1) + min;
 	}
+	//get random password 
 	private static String generateRandomPassword(){
 		Random r = new Random();
 		String password="";
@@ -43,6 +46,7 @@ public class Bank{
 		}
 		return password;
 	}
+	//add account from user input
 	public Explain addAccount(String name,int minimumBalance, String answer){
 		Explain r = new Explain();
 		if(this.minimumBalance>minimumBalance){
@@ -80,6 +84,7 @@ public class Bank{
 			return r;	
 		}
 	}
+	//add acccount from file previously created
 	public Explain addAccount(String name,long balance, int accountNumber,String password,String transactions,String answer){
 		Explain r = new Explain();
 		if(first == null && last == null){
@@ -100,6 +105,7 @@ public class Bank{
 			return r;	
 		}
 	}
+	//remove account from bank
 	public Explain terminateAccount(int accountNumber,String password){
 		Explain r = new Explain();
 		if((first.getAccountNumber() == accountNumber) && first.getPassword().equals(password)){
@@ -129,6 +135,7 @@ public class Bank{
 			return r;
 		}
 	}
+	//deposite money into account
 	public Explain deposite(int accountNumber,String password, long amount){
 		Explain r = new Explain();
 		if(amount < this.minimumDeposite){
@@ -151,6 +158,7 @@ public class Bank{
 		r.reason = "Account Not Found with given details";
 		return r;
 	}
+	//withdraw money from account
 	public Explain withdraw(int accountNumber,String password, long amount){
 		Explain r = new Explain();
 		Account p = first;
@@ -173,6 +181,7 @@ public class Bank{
 		r.reason = "Account Not Fount with Given details";
 		return r;
 	}
+	//change name of the account holder
 	public Explain changeName(int accountNumber, String password, String name){
 		Explain r = new Explain();
 		Account p = first;
@@ -189,6 +198,7 @@ public class Bank{
 		r.reason = "Acocunt Not Found with Given details";
 		return r;
 	}
+	//forget password service to generate new password
 	public Explain forgetPassword(int accountNumber,String answer){
 		Explain r = new Explain();
 		Account p = first;
@@ -206,6 +216,7 @@ public class Bank{
 		r.reason = "Acocunt Not Found with Given details";
 		return r;
 	}
+	//method to print all transactions of an account
 	public Explain getTransactions(int accountNumber){
 		Explain r = new Explain();
 		Account p  = first;
@@ -225,6 +236,7 @@ public class Bank{
 		r.reason = "Account Not Found";
 		return r;
 	}
+	//method to display all accounts in the bank
 	public void display(){
 		Account p = first;
 		while(p!=null){
@@ -232,6 +244,7 @@ public class Bank{
 			p = p.link;
 		}
 	}
+	//close methid to write list data into file and return
 	public void clos()throws IOException{
 		FileWriter fw = new FileWriter("data.txt");
 		Account p = first;

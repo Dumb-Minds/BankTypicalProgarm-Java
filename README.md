@@ -2,7 +2,7 @@
 
 Author            : M.Sukresh.   
 Project           : Bank(commandline). 
-Topic covered     : Exception Handling, File Handling, input processing, Linked List, Psuedo Exceptions.
+Topic covered     : Exception Handling, File Handling, input processing, Linked List, Psuedo Exceptions.          
 Assumptions       : Bank(only savings, single branch,no interest).  
 Operations        : All works with account number and password.           
 Mail              : mandasukresh@gmail.com  

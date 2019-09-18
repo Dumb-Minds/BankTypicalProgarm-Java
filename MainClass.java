@@ -1,3 +1,4 @@
+//class fro giving all user services
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -54,6 +55,7 @@ public class MainClass{
 		Explain r = sbi.addAccount(name,balance,answer);
 		System.out.println("\033[1;31m"+r.result+" ? "+r.reason+"\033[0m");
 	}
+	//remove service with exception handling
 	public static void remove(Bank sbi, BufferedReader br)throws IOException{
 		System.out.println("\033[1;32m"+" Enter Account Number "+"\033[0m");
 		System.out.print("\033[1;32m"+" %$(remove)$ "+"\033[0m");
@@ -70,6 +72,7 @@ public class MainClass{
 		Explain r = sbi.terminateAccount(account,password);
 		System.out.println("\033[1;31m"+r.result+" ? "+r.reason+"\033[0m");
 	}
+	//deposite service with exception handling
 	public static void deposite(Bank sbi,BufferedReader br)throws IOException{
 		System.out.println("\033[1;32m"+" Enter Account Number "+"\033[0m");
 		System.out.print("\033[1;32m"+" %$(deposite)$ "+"\033[0m");
@@ -96,6 +99,7 @@ public class MainClass{
 		Explain r = sbi.deposite(account,password,amount);
 		System.out.println("\033[1;31m"+r.result+" ? "+r.reason+"\033[0m");
 	}
+	//withdraw service with exception handling
 	public static void withdraw(Bank sbi, BufferedReader br)throws IOException{
 		System.out.println("\033[1;32m"+" Enter Account Number "+"\033[0m");
 		System.out.print("\033[1;32m"+" %$(withdraw)$ "+"\033[0m");
@@ -122,6 +126,7 @@ public class MainClass{
 		Explain r = sbi.withdraw(account,password,amount);
 		System.out.println("\033[1;31m"+r.result+" ? "+r.reason+"\033[0m");
 	}
+	//change name service with exception handling
 	public static void changeName(Bank sbi, BufferedReader br)throws IOException{
 		System.out.println("\033[1;32m"+" Enter Account Number "+"\033[0m");
 		System.out.print("\033[1;32m"+" %$(Change Name)$ "+"\033[0m");
@@ -143,6 +148,7 @@ public class MainClass{
 		Explain r = sbi.changeName(account,password,name);
 		System.out.println("\033[1;31m"+r.result+" ? "+r.reason+"\033[0m");
 	}
+	//forget password service with exception handling
 	public static void forget(Bank sbi, BufferedReader br)throws IOException{
 		System.out.println("\033[1;32m"+" Enter Account Number "+"\033[0m");
 		System.out.print("\033[1;32m"+" %$(forget)$ "+"\033[0m");
@@ -160,6 +166,7 @@ public class MainClass{
 		Explain r = sbi.forgetPassword(account,answer);
 		System.out.println("\033[1;31m"+r.result+" ? "+r.reason+"\033[0m");
 	}
+	//exit service with exception handling
 	public static void exit(Bank sbi)throws InterruptedException,IOException{
 		sbi.clos();
 		TimeUnit.SECONDS.sleep(1);
@@ -170,6 +177,7 @@ public class MainClass{
 		System.out.println("\033[1;31m"+"Sorry our bank went collapsed and but your money is safe run again to reconstruct bank "+"\033[0m");
 		return;
 	}
+	//transactions service with exception handling
 	public static void transaction(Bank sbi, BufferedReader br)throws IOException{
 		System.out.println("\033[1;32m"+" Enter Account Number "+"\033[0m");
 		System.out.print("\033[1;32m"+" %$(transaction)$ "+"\033[0m");

@@ -20,5 +20,5 @@ Mail                  : mandasukresh@gmail.com
 Youtube               : htttps://youtube.com/c/Dumbminds/        
 Facebook              : https://www.facebook.com/dumbminds01/          
 Instagram             : https://instagram.com/dumbminds01/          
-Quora                 : https://www.quora.com/profile/Manda-Sukresh     
+Quora                 : https://www.quora.com/profile/Manda-Sukresh        
 
